@@ -2,7 +2,7 @@
 Name: Daniel Puerto & Jacob Miranda
 Date: 4/15/26
 Group: 15
-Description:
+Description: Creates the expert version of the factory that holds the expert versions of the monsters and returns them at random
 '''
 
 
