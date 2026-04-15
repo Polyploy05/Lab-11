@@ -12,7 +12,9 @@ import easy_goblin
 import easy_troll
 
 class BeginnerFactory(enemy_factory.EnemyFactory):
+    # Creates the Beginner factory class
     def create_random_enemy(self):
+        # Creates the choices for when each enemy can be selected
         enemy_type = random.choice(['easy_ogre', 'easy_goblin', 'easy_troll'])
         if enemy_type == 'easy_ogre':
             return easy_ogre.EasyOgre()
