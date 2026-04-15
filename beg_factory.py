@@ -2,7 +2,7 @@
 Name: Daniel Puerto & Jacob Miranda
 Date: 4/15/26
 Group: 15
-Description:
+Description: Creates the beginner factory and imports the goblins, trolls and ogres with their easy version. 
 '''
 
 import random
