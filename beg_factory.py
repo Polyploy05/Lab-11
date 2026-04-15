@@ -1,5 +1,8 @@
 '''
-
+Name: Daniel Puerto & Jacob Miranda
+Date: 4/15/26
+Group: 15
+Description:
 '''
 
 import random
