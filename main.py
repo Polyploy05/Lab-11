@@ -6,11 +6,16 @@ Description:
 '''
 
 
+
+import hero
+import beg_factory
+
+
 def main():
     print("Monster Trials")
 
     #Get user input
-    name = input("What is your name?").strip()
+    name = input("What is your name? ").strip()
     print(f"\nYou will face a series of 3 monsters, {name}.")
     print("Defeat all to win.\n")
 
@@ -21,20 +26,20 @@ def main():
 
     #Choose factory
     if choice == "1":
-        factory = beg_factory()
+        factory = beg_factory.BeginnerFactory()
     else:
         factory = enemy_factory()
 
     #Create Hero
-    hero = Hero(name)
+    player = hero.Hero(name)
 
     #Generate the monsters
     monsters = []
     for _ in range (3):
-        monsters.append(factory.create_monsters())
+        monsters.append(factory.create_random_enemy())
 
     #Loop the game
-    while hero.hp > 0 and len(monsters) > 0: 
+    while player.hp > 0 and len(monsters) > 0: 
 
         #Display the enemies
         print("\nChoose an enemy to attack:")
@@ -45,16 +50,16 @@ def main():
         monster = monsters[enemy_choice]
 
         #Choose your attack
-        print(f"\n{hero.name} HP: {hero.hp}")
+        print(f"\n{player.name()} HP: {player.hp()}")
         print("1. Sword attack")
         print("2. Arrow attack")
         attack_choice= input("Enter choice: ").strip()
 
         #Hero Attacks
         if attack_choice == "1":
-            result = hero.sword_attack(monster)
+            result = player.sword_attack(monster)
         else:
-            result = hero.arrow_attack(monster)
+            result = player.arrow_attack(monster)
 
         print(result)
 
@@ -64,10 +69,10 @@ def main():
             monsters.pop(enemy_choice)
         else:
             #Monster attacks back
-            result = monster.attack(hero)
+            result = monster.attack(player)
             print(result)
     #End condition
-    if hero.hp <= 0:
+    if player.hp() <= 0:
         print("\nYou have been defeated.")
     else:
         print("\nYou have defeated all the monsters!")
