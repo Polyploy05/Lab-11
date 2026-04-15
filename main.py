@@ -2,7 +2,8 @@
 Name: Daniel Puerto & Jacob Miranda
 Date: 4/15/26
 Group: 15
-Description:
+Description: Creates the interface where the game is ran, how it loops, how the user dictates which factory they want to do, 
+creates the hero, win/lose conditions, generates the monsters and checks whether they are alive or not.
 '''
 
 
