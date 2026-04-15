@@ -6,17 +6,19 @@ Description: Creates the expert version of the factory that holds the expert ver
 '''
 
 
-
 import random
-from enemy_factory import EnemyFactory
-from goblin import Goblin
-from ogre import Ogre
-from troll import Troll
+import enemy_factory
+import ogre
+import goblin
+import troll
 
-class ExpertFactory:
-  #Creates the difficult enemies 
-  def create_monster(self):
-    # Randomly generate and returns a difficult enemy
-    enemies = [Goblin, Ogre, Troll]
-    chosen_enemy = random.choice(enemies)
-    return chosen_enemy()
+class ExpertFactory(enemy_factory.EnemyFactory):
+    def create_random_enemy(self):
+        enemy_type = random.choice(['ogre', 'goblin', 'troll'])
+        if enemy_type == 'ogre':
+            return ogre.Ogre()
+        elif enemy_type == 'goblin':
+            return goblin.Goblin()
+        elif enemy_type == 'troll':
+            return troll.Troll()
+        
