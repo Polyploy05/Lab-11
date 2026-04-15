@@ -12,10 +12,12 @@ import entity
 import random
 
 class Ogre(entity.Entity):
+    #Creates the ogre entity that has hp ranging from 8-12
     def __init__(self):
         self.name = "Ogre"
         self.hp = random.randint(8, 12)
 
+    #Creates the attack that does damage to the enemy
     def melee_attack(self, enemy):
         damage = random.randint(6, 10)
         enemy.take_damage(damage)
