@@ -2,7 +2,7 @@
 Name: Daniel Puerto & Jacob Miranda
 Date: 4/15/26
 Group: 15
-Description:
+Description: Creates the easy version of the ogre that will be implemented into the beginner factory
 '''
 
 import entity
