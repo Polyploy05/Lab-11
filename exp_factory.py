@@ -3,6 +3,10 @@
 
 
 import random
+from enemy_factory import EnemyFactory
+from goblin import Goblin
+from ogre import Ogre
+from troll import Troll
 
 class ExpertFactory:
   #Creates the difficult enemies 
