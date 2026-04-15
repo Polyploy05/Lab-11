@@ -2,7 +2,7 @@
 Name: Daniel Puerto & Jacob Miranda
 Date: 4/15/26
 Group: 15
-Description:
+Description: Creates the enemy factory that holds all the enemy factories and creates and returns a random enemy
 '''
 
 
