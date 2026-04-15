@@ -9,6 +9,8 @@ Description:
 
 import hero
 import beg_factory
+import exp_factory
+import check_input
 
 
 def main():
@@ -22,13 +24,13 @@ def main():
     print("Difficult.")
     print("1. Beginner")
     print("2. Expert")
-    choice = input().strip()
+    choice = check_input.get_int_range("Enter choice: ", 1, 2)
 
     #Choose factory
-    if choice == "1":
+    if choice == 1:
         factory = beg_factory.BeginnerFactory()
     else:
-        factory = enemy_factory()
+        factory = exp_factory.ExpertFactory()
 
     #Create Hero
     player = hero.Hero(name)
@@ -46,33 +48,34 @@ def main():
         for i in range(len(monsters)):
             print(f"{i+1}.{monsters[i].name} HP: {monsters[i].hp}")
 
-        enemy_choice = int(input("Enter choice:").strip()) - 1
+        enemy_choice = check_input.get_int_range("Enter choice: ", 1, len(monsters)) - 1
         monster = monsters[enemy_choice]
 
         #Choose your attack
-        print(f"\n{player.name()} HP: {player.hp()}")
+        print(f"\n{player.name} HP: {player.hp}")
         print("1. Sword attack")
         print("2. Arrow attack")
-        attack_choice= input("Enter choice: ").strip()
+        attack_choice = check_input.get_int_range("Enter choice: ", 1, 2)
 
         #Hero Attacks
-        if attack_choice == "1":
-            result = player.sword_attack(monster)
+        if attack_choice == 1:
+            result = player.melee_attack(monster)
         else:
-            result = player.arrow_attack(monster)
+            result = player.ranged_attack(monster)
 
         print(result)
 
         #Is monster dead?
         if monster.hp <= 0:
-            print("You have slain the {monster.name}")
+            print(f"You have slain the {monster.name}")
             monsters.pop(enemy_choice)
         else:
             #Monster attacks back
-            result = monster.attack(player)
+            result = monster.melee_attack(player)
             print(result)
+
     #End condition
-    if player.hp() <= 0:
+    if player.hp <= 0:
         print("\nYou have been defeated.")
     else:
         print("\nYou have defeated all the monsters!")
