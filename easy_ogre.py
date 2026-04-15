@@ -9,9 +9,10 @@ import entity
 import random
 
 class EasyOgre(entity.Entity):
+    # Creates the Easy Ogre 
     def __init__(self):
         super().__init__("Easy Ogre", random.randint(7, 8))
-
+    # Attacks the hero 
     def melee_attack(self, enemy):
         damage = random.randint(5, 8)
         enemy.take_damage(damage)
