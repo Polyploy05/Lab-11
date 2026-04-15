@@ -11,9 +11,10 @@ import entity
 import random
 
 class EasyGoblin(entity.Entity):
+    #Creates the easy goblin
     def __init__(self):
         super().__init__("Easy Goblin", random.randint(5, 7))
-
+    #Attacks the hero
     def melee_attack(self, enemy):
         damage = random.randint(4, 6)
         enemy.take_damage(damage)
