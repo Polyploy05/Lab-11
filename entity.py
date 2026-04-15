@@ -2,7 +2,9 @@
 Name: Daniel Puerto & Jacob Miranda
 Date: 4/15/26
 Group: 15
-Description:
+Description: The basic constructor class for any entity. Allows for each entity to be given
+a name and hp, the ability to take damage, and a string representation. 
+Also has an abstract method for standardmelee attack
 '''
 
 
@@ -11,7 +13,7 @@ import abc
 class Entity(abc.ABC):
     def __init__(self, name, hp):
         self._name = name
-        self._hp = 25
+        self._hp = hp
 
     @property
     def name(self):
@@ -22,6 +24,7 @@ class Entity(abc.ABC):
         return self._hp
     
     def take_damage(self, damage):
+        #Remove damage from hp. Prevents hp from going below 0
         self._hp -= damage
         if self._hp < 0:
             self._hp = 0  
@@ -32,5 +35,8 @@ class Entity(abc.ABC):
     @abc.abstractmethod
     def melee_attack(self, target):
         pass
+
+
+
 
 
