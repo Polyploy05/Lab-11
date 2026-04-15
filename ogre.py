@@ -2,7 +2,7 @@
 Name: Daniel Puerto & Jacob Miranda
 Date: 4/15/26
 Group: 15
-Description:
+Description: Creates the Ogre class that is used in the expert factory
 '''
 
 
