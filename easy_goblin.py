@@ -1,0 +1,15 @@
+
+
+
+
+import entity
+import random
+
+class EasyGoblin(entity.Entity):
+    def __init__(self):
+        super().__init__("Easy Goblin", random.randint(5, 7))
+
+    def melee_attack(self, enemy):
+        damage = random.randint(4, 6)
+        enemy.take_damage(damage)
+        return f"{self.name} bites {enemy.name} for {damage} damage!"
