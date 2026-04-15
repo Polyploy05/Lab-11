@@ -8,7 +8,9 @@ Description:
 
 import abc
 class EnemyFactory(abc.ABC):
+    #Abstract base class for all the enemy factories 
 
     @abc.abstractmethod
     def create_random_enemy(self, name, hp):
+        #Creates and returns a random enemy
         pass
